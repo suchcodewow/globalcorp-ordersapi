@@ -16,7 +16,7 @@ kind: Component
 metadata:
   name: ui
   description: |
-    Frontend react UI for globalcorp.
+    API to store customer storefront orders.
   links:
     - title: Website
       url: http://harness.io
