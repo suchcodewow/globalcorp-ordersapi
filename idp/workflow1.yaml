@@ -29,7 +29,7 @@ spec:
       name: Create and deploy API
       action: trigger:harness-custom-pipeline
       input:
-        url: https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/all/orgs/default/projects/ngworkshop/pipelines/neworkshopprovisionusers/pipeline-studio?storeType=INLINE
+        url: https://app.harness.io/ng/account/EeRjnXTnS4GrLG5VNNJZUw/module/cd/orgs/sandbox/projects/ShawnPearson/pipelines/IDPcustom/pipeline-studio?storeType=INLINE
         inputset:
           api_type: ${{ parameters.api_type }}
         apikey: ${{ parameters.token }}
