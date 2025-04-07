@@ -14,7 +14,7 @@ spec:
       required:
         - api_type
       properties:
-        github_org_name:
+        api_type:
           title: Api Name
           type: string
           description: Api Name
