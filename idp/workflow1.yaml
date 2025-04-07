@@ -15,7 +15,7 @@ spec:
         - api_type
       properties:
         github_org_name:
-          title: GitHub Organization
+          title: Api Name
           type: string
           description: Api Name
         token:
