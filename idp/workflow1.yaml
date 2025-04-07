@@ -24,6 +24,7 @@ spec:
           type: string
           description: Api Type
           default: expedited
+          ui:widget: radio
           enum:
             - standard
             - expedited
