@@ -12,12 +12,21 @@ spec:
   parameters:
     - title: Name of the new API
       required:
+        - api_name
         - api_type
       properties:
-        api_type:
+        api_name:
           title: Api Name
           type: string
           description: Api Name
+        api_type:
+          title: Api Type
+          type: string
+          description: Api Type
+          default: expedited
+          enum:
+            - standard
+            - expedited
         token:
           title: Harness Token
           type: string
@@ -31,6 +40,7 @@ spec:
       input:
         url: https://app.harness.io/ng/account/EeRjnXTnS4GrLG5VNNJZUw/module/cd/orgs/sandbox/projects/ShawnPearson/pipelines/IDPcustom/pipeline-studio?storeType=INLINE
         inputset:
+          api_name: ${{ parameters.api_name }}
           api_type: ${{ parameters.api_type }}
         apikey: ${{ parameters.token }}
     # The final step is to register our new component in the catalog.
