@@ -2,32 +2,22 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: Workflows-Quickstart
-  title: Create a New GitHub Repository
-  description: Creates a new GitHub Repository 
+  name: deployapi
+  title: Create and deploy new API
+  description: Create and deploy new API 
 spec:
   owner: service.owner
   type: service
   # these are the steps which are rendered in the frontend with the form input
   parameters:
-    - title: Fill in the repo details
+    - title: Name of the new API
       required:
-        - github_org_name
-        - github_repo_name
-        - github_username
+        - api_type
       properties:
         github_org_name:
           title: GitHub Organization
           type: string
-          description: Name the org where you want to add the new repository
-        github_repo_name:
-          title: Repository Location
-          type: string
-          description: Name the new repository that you want to create 
-        github_username:
-          title: GitHub Username
-          type: string
-          description: Add Your GitHub Username 
+          description: Api Name
         token:
           title: Harness Token
           type: string
@@ -36,14 +26,12 @@ spec:
   # here's the steps that are executed in series in the scaffolder backend
   steps:
     - id: trigger
-      name: Onboarding a New GitHub Repository
+      name: Create and deploy API
       action: trigger:harness-custom-pipeline
       input:
-        url: "URL_of_the_Harness_Pipeline_Created_Above"
+        url: https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/all/orgs/default/projects/ngworkshop/pipelines/neworkshopprovisionusers/pipeline-studio?storeType=INLINE
         inputset:
-          github_org: ${{ parameters.github_org_name }}
-          github_repo: ${{ parameters.github_repo_name }}
-          github_username: ${{parameters.github_username}}
+          api_type: ${{ parameters.api_type }}
         apikey: ${{ parameters.token }}
     # The final step is to register our new component in the catalog.
 
